@@ -1,6 +1,6 @@
 import os
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from extensions import db
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-db = SQLAlchemy(app)
+db.init_app(app)
 
 # ─────────────────────────────────────────
 # Register routes

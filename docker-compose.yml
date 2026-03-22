@@ -67,7 +67,9 @@ services:
   # Atomic Services
   # ════════════════════════════════
   users-service:
-    build: ./services/users-service
+    build:
+      context: ./services
+      dockerfile: users-service/Dockerfile
     container_name: users-service
     restart: always
     ports:

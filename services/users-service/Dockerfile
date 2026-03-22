@@ -2,11 +2,12 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY ../shared /app/shared
+# shared folder is now accessible because build context is services/
+COPY shared /app/shared
 
-COPY requirements.txt .
+COPY users-service/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY users-service/ .
 
 CMD ["python", "app.py"]
