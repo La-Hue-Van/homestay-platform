@@ -1,0 +1,126 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+
+  # ════════════════════════════════
+  # Booking Service
+  # ════════════════════════════════
+  - name: booking-service
+    url: http://booking-service:5001
+    routes:
+      - name: booking-route
+        paths:
+          - /api/booking
+        strip_path: false
+
+  # ════════════════════════════════
+  # Deposit Resolution
+  # ════════════════════════════════
+  - name: deposit-resolution
+    url: http://deposit-resolution:5002
+    routes:
+      - name: deposit-route
+        paths:
+          - /api/deposit
+        strip_path: false
+
+  # ════════════════════════════════
+  # Users Service
+  # ════════════════════════════════
+  - name: users-service
+    url: http://users-service:5003
+    routes:
+      - name: users-route
+        paths:
+          - /api/users
+        strip_path: false
+
+  # ════════════════════════════════
+  # Listings Service
+  # ════════════════════════════════
+  - name: listings-service
+    url: http://listings-service:5004
+    routes:
+      - name: listings-route
+        paths:
+          - /api/listings
+        strip_path: false
+
+  # ════════════════════════════════
+  # Availability Service
+  # ════════════════════════════════
+  - name: availability-service
+    url: http://availability-service:5005
+    routes:
+      - name: availability-route
+        paths:
+          - /api/availability
+        strip_path: false
+
+  # ════════════════════════════════
+  # Stay Service
+  # ════════════════════════════════
+  - name: stay-service
+    url: http://stay-service:5006
+    routes:
+      - name: stay-route
+        paths:
+          - /api/stay
+        strip_path: false
+
+  # ════════════════════════════════
+  # Inspection Service
+  # ════════════════════════════════
+  - name: inspection-service
+    url: http://inspection-service:5007
+    routes:
+      - name: inspection-route
+        paths:
+          - /api/inspection
+        strip_path: false
+
+  # ════════════════════════════════
+  # Payment Logs Service
+  # ════════════════════════════════
+  - name: payment-logs-service
+    url: http://payment-logs-service:5008
+    routes:
+      - name: payment-logs-route
+        paths:
+          - /api/payment-logs
+        strip_path: false
+
+  # ════════════════════════════════
+  # Listings Search Service
+  # ════════════════════════════════
+  - name: listings-search-service
+    url: http://listings-search-service:5009
+    routes:
+      - name: listings-search-route
+        paths:
+          - /api/search
+        strip_path: false
+
+  # ════════════════════════════════
+  # Payment Gateway Wrapper
+  # ════════════════════════════════
+  - name: payment-gateway-wrapper
+    url: http://payment-gateway-wrapper:5010
+    routes:
+      - name: payment-gateway-route
+        paths:
+          - /api/gateway
+        strip_path: false
+
+  # ════════════════════════════════
+  # Notification Gateway
+  # ════════════════════════════════
+  - name: notification-gateway
+    url: http://notification-gateway:5011
+    routes:
+      - name: notification-route
+        paths:
+          - /api/notifications
+        strip_path: false
+
